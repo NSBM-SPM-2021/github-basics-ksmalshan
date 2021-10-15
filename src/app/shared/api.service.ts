@@ -10,19 +10,19 @@ export class ApiService {
   constructor(private http : HttpClient) { }
 
   postEmployee(data : any){
-    return this.http.post<any>("http://localhost:3000/posts", data)
+    return this.http.post<any>("https://employee-spm-api.herokuapp.com/", data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
   getEmployee(){
-    return this.http.get<any>("http://localhost:3000/posts")
+    return this.http.get<any>("https://employee-spm-api.herokuapp.com/")
     .pipe(map((res:any)=>{
       return res;
     }))
   }
   updateEmployee(data : any,id: number){
-    return this.http.put<any>("http://localhost:3000/posts/"+id,data)
+    return this.http.put<any>("https://employee-spm-api.herokuapp.com/"+id,data)
     .pipe(map((res:any)=>{
       return res;
     }))
