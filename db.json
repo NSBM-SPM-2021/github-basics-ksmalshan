@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "Malki",
+      "lastName": "Chathuranga",
+      "email": "malki97@gmail.com",
+      "contact": "0779707488",
+      "salary": "30000"
+    },
+    {
+      "id": 3,
+      "firstName": "Sachith",
+      "lastName": "Kumara",
+      "email": "sachith@gmail.com",
+      "contact": "0779707488",
+      "salary": "50000"
+    },
+    {
+      "id": 4,
+      "firstName": "Thimira",
+      "lastName": "Tharindra",
+      "email": "thimira@gmail.com",
+      "contact": "0757080712",
+      "salary": "60000"
+    },
+    {
+      "id": 5,
+      "firstName": "Nathmi",
+      "lastName": "Fenando",
+      "email": "neth98@gmail.com",
+      "contact": "0772869938",
+      "salary": "40000"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

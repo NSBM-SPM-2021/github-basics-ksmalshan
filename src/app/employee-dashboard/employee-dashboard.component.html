@@ -1,11 +1,12 @@
 <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
-        <h2 style="color: aliceblue;">AngularCRUD</h2>
+        <h3 style="color: aliceblue;">Employee Management System</h3>
         <div class="d-flex">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+            <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
         </div>
     </div>
 </nav>
+
 
 <br>
 
@@ -13,7 +14,7 @@
     <div class="card">
         <div class="card-body">
 
-<table class="table">
+<table class="table table-hover table-dark">
     <thead>
         <tr>
             <th scope="col">Employee ID</th>
@@ -26,16 +27,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Shashi</td>
-            <td>Nishadi</td>
-            <td>shashi@gmail.com</td>
-            <td>0778963498</td>
-            <td>Rs.60,000</td>
+        <tr *ngFor="let row of employeeData">
+            <td>{{row.id}}</td>
+            <td>{{row.firstName}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.contact}}</td>
+            <td>{{row.salary}}</td>
             <td>
-                <button class="btn btn-info">Edit</button>
-                <button class="btn btn-danger mx-3">Delete</button>
+                <button (click)="onEdit(row)"  style="color: aliceblue;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -89,8 +90,9 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>
